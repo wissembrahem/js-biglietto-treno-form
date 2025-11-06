@@ -31,6 +31,6 @@ form.addEventListener("submit", function (event) {
     const results = document.getElementById('results');
 
     // output
-    results.innerHTML = ticketPrice;
+    results.innerHTML = "Prezzo del biglietto " + ticketPrice ;
     train.src = "./imgtreno/booleantrain.png"
 });
