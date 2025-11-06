@@ -13,9 +13,10 @@
 //_X_ impostare l'output
 
 
-const submit = document.getElementById('submit');
+const form = document.querySelector('form');
 
-submit.addEventListener('click', function() {
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
     const manyKm  = document.getElementById('manyKm');
     const userAge = document.getElementById('userAge');
     let ticketPrice = manyKm.value * 0.21;
