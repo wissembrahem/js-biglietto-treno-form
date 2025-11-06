@@ -1,8 +1,8 @@
 //Descrizione:
 //Scrivere un programma che chieda all’utente:
 //Il numero di chilometri da percorrere,
-  //  Età del passeggero,
-    //    Sulla base di queste informazioni dovrà calcolare il prezzo totale del biglietto di viaggio, secondo le seguenti regole:
+//  Età del passeggero,
+//    Sulla base di queste informazioni dovrà calcolare il prezzo totale del biglietto di viaggio, secondo le seguenti regole:
 //il prezzo del biglietto è definito in base ai km(0.21 € al km),
 //    va applicato uno sconto del 20 % per i minorenni,
 //        va applicato uno sconto del 40 % per gli over 65.,
@@ -14,20 +14,23 @@
 
 
 const form = document.querySelector('form');
+const button = document.querySelector('#submit')
+const train = document.querySelector('#train')
 
-form.addEventListener("submit", function(event) {
+form.addEventListener("submit", function (event) {
     event.preventDefault();
-    const manyKm  = document.getElementById('manyKm');
+    const manyKm = document.getElementById('manyKm');
     const userAge = document.getElementById('userAge');
     let ticketPrice = manyKm.value * 0.21;
     if (userAge.value < 18) {
         ticketPrice = ticketPrice * 0.8;
     } else if (userAge.value > 65) {
-        ticketPrice = ticketPrice *0.6
+        ticketPrice = ticketPrice * 0.6
     }
 
     const results = document.getElementById('results');
 
     // output
-   results.innerHTML = ticketPrice;
+    results.innerHTML = ticketPrice;
+    train.src = "./imgtreno/booleantrain.png"
 });
